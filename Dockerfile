@@ -5,12 +5,12 @@ COPY package*.json ./
 
 # ---- Dependencies ----
 FROM base AS dependencies
-RUN npm ci
+RUN npm ci --registry=https://registry.npm.taobao.org
 
 # ---- Build ----
 FROM dependencies AS build
 COPY . .
-RUN npm run build
+RUN npm run build --registry=https://registry.npm.taobao.org
 
 # ---- Production ----
 FROM node:19-alpine AS production
