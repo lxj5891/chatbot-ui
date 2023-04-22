@@ -350,37 +350,35 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
       {!(apiKey || serverSideApiKeyIsSet) ? (
         <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
           <div className="text-center text-4xl font-bold text-black dark:text-white">
-            Welcome to Chatbot UI
+            欢迎来到AI超级星球
           </div>
           <div className="text-center text-lg text-black dark:text-white">
-            <div className="mb-8">{`Chatbot UI is an open source clone of OpenAI's ChatGPT UI.`}</div>
             <div className="mb-2 font-bold">
-              Important: Chatbot UI is 100% unaffiliated with OpenAI.
+              在这里体验Chat AI的魔力，进行内容创作、
+            </div>
+            <div className="mb-2 font-bold">
+              创意写作、代码构建、资料查找等功能.
             </div>
           </div>
           <div className="text-center text-gray-500 dark:text-gray-400">
             <div className="mb-2">
-              Chatbot UI allows you to plug in your API key to use this UI with
-              their API.
+              API key获取请关注公众号：AI超级星球，回复【key】免费获取.
             </div>
             <div className="mb-2">
-              It is <span className="italic">only</span> used to communicate
-              with their API.
+              或添加客服：princelee2023，获取资料包.
             </div>
             <div className="mb-2">
-              {t(
-                'Please set your OpenAI API key in the bottom left of the sidebar.',
-              )}
+              请在左侧填写API Key，开始体验吧！
             </div>
             <div>
-              {t("If you don't have an OpenAI API key, you can get one here: ")}
+              GPT使用指南： <br></br>
               <a
-                href="https://platform.openai.com/account/api-keys"
+                href="https://mwvc4lq5rs8.feishu.cn/docx/QezDdWzaRo3Yj2xbai6cOH62nkc"
                 target="_blank"
                 rel="noreferrer"
                 className="text-blue-500 hover:underline"
               >
-                openai.com
+                https://mwvc4lq5rs8.feishu.cn/docx/QezDdWzaRo3Yj2xbai6cOH62nkc
               </a>
             </div>
           </div>
