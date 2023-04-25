@@ -10,7 +10,12 @@ const nextConfig = {
       asyncWebAssembly: true,
       layers: true,
     };
-
+    config.optimization.minimizer.forEach((minimizer) => {
+      if (minimizer.constructor.name === "TerserPlugin") {
+        // 禁用console.log的过滤
+        minimizer.options.terserOptions.compress.drop_console = false;
+      }
+    });
     return config;
   },
 };
