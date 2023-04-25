@@ -28,4 +28,4 @@ COPY --from=build /app/next-i18next.config.js ./next-i18next.config.js
 EXPOSE 3001
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["npm", "dev"]
