@@ -5,6 +5,8 @@ COPY package*.json ./
 
 # ---- Dependencies ----
 FROM base AS dependencies
+
+RUN npm config set registry https://registry.npm.taobao.org/
 RUN npm ci --registry=https://registry.npm.taobao.org
 
 # ---- Build ----
