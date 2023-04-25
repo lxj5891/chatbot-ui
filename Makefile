@@ -10,6 +10,8 @@ run:
 	docker stop chatbot-ui || true && docker rm chatbot-ui || true
 	docker run --name chatbot-ui --rm -e OPENAI_API_KEY=${OPENAI_API_KEY} -p 3001:3001 chatbot-ui
 
+	docker run --name chatbot-ui --rm -p 3001:3001 chatbot-ui
+
 logs:
 	docker logs -f chatbot-ui
 

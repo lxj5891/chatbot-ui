@@ -5,7 +5,6 @@ import { ChatBody, Message } from '@/types/chat';
 
 // @ts-expect-error
 import wasm from '../../node_modules/@dqbd/tiktoken/lite/tiktoken_bg.wasm?module';
-
 import tiktokenModel from '@dqbd/tiktoken/encoders/cl100k_base.json';
 import { Tiktoken, init } from '@dqbd/tiktoken/lite/init';
 
@@ -33,11 +32,11 @@ const handler = async (req: Request): Promise<Response> => {
 
     let tokenCount = prompt_tokens.length;
     let messagesToSend: Message[] = [];
-
+    
     for (let i = messages.length - 1; i >= 0; i--) {
       const message = messages[i];
       const tokens = encoding.encode(message.content);
-
+      console.log(message.content)
       if (tokenCount + tokens.length + 1000 > model.tokenLimit) {
         break;
       }
@@ -46,9 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     encoding.free();
-
     const stream = await OpenAIStream(model, promptToSend, key, messagesToSend);
-
     return new Response(stream);
   } catch (error) {
     console.error(error);
