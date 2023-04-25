@@ -64,6 +64,8 @@ Build locally:
 ```shell
 docker build -t chatgpt-ui .
 docker run -e OPENAI_API_KEY=xxxxxxxx -p 3000:3000 chatgpt-ui
+
+docker run -e OPENAI_API_KEY=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 -p 3000:3000 chatgpt-ui
 ```
 
 Pull from ghcr:
